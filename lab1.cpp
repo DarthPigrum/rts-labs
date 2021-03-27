@@ -1,29 +1,12 @@
 #include "lab1.h"
 #include "ui_lab1.h"
-#include <QtMath>
-#include <qcustomplot/qcustomplot.h>
-#include <random>
-
-std::default_random_engine generator;
-std::uniform_real_distribution<double> distribution(0.0, 1.0);
+#include "common.h"
+#include "qcustomplot/qcustomplot.h"
 
 template <typename T>
 using QVectorView =
     std::pair<QVector<double>::const_iterator, QVector<double>::const_iterator>;
 
-QVector<double> generate(int harmonics, double frequency, int N) {
-  QVector<double> signal(N);
-  double W = frequency / harmonics;
-
-  for (int i = 0; i < harmonics; ++i) {
-    double amplitude = distribution(generator);
-    double phase = distribution(generator);
-    for (int t = 0; t < N; ++t)
-      signal[t] += (amplitude * sin(W * t + phase));
-    W += W;
-  }
-  return signal;
-}
 double average(QVectorView<double> signal) {
   int n = 0;
   double sum = 0.0;

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Lab2</class>
+ <widget class="QWidget" name="Lab2">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>380</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="parameters">
+     <property name="title">
+      <string>Параметри</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_8">
+      <item row="1" column="1">
+       <widget class="QDoubleSpinBox" name="frequency">
+        <property name="minimum">
+         <double>100.000000000000000</double>
+        </property>
+        <property name="maximum">
+         <double>3000.000000000000000</double>
+        </property>
+        <property name="singleStep">
+         <double>100.000000000000000</double>
+        </property>
+        <property name="value">
+         <double>1500.000000000000000</double>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="labelHarmonics">
+        <property name="text">
+         <string>Гармоніки</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="labelFrequency">
+        <property name="text">
+         <string>Частота</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>Розрахувати</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QSpinBox" name="harmonics">
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>16</number>
+        </property>
+        <property name="value">
+         <number>6</number>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QSpinBox" name="nInput">
+        <property name="minimum">
+         <number>32</number>
+        </property>
+        <property name="maximum">
+         <number>2048</number>
+        </property>
+        <property name="value">
+         <number>1024</number>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="labelN">
+        <property name="text">
+         <string>N</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QGroupBox" name="signal">
+     <property name="title">
+      <string>Сигнал</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_7"/>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QGroupBox" name="dft">
+     <property name="title">
+      <string>DFT</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_9"/>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QGroupBox" name="fft">
+     <property name="title">
+      <string>FFT</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_6"/>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
