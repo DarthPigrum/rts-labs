@@ -7,15 +7,14 @@ namespace Ui {
 class Lab1;
 }
 
-class Lab1 : public QWidget
-{
-    Q_OBJECT
+class Lab1 : public QWidget {
+  Q_OBJECT
 public:
-    explicit Lab1(QWidget *parent = nullptr);
-    ~Lab1();
+  explicit Lab1(QWidget *parent = nullptr);
+  ~Lab1();
 
 private:
-    Ui::Lab1 *ui;
+  Ui::Lab1 *ui;
 };
 
 #endif // LAB1_H

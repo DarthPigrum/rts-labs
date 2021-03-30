@@ -1,7 +1,7 @@
 #include "lab1.h"
-#include "ui_lab1.h"
 #include "common.h"
 #include "qcustomplot/qcustomplot.h"
+#include "ui_lab1.h"
 
 template <typename T>
 using QVectorView =
