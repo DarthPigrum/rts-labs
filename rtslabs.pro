@@ -2,7 +2,7 @@ QT       += core gui printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++11
+CONFIG += c++17
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     common.cpp \
     lab2.cpp \
+    lab3.cpp \
     qcustomplot/qcustomplot.cpp \
     lab1.cpp \
     main.cpp \
@@ -19,6 +20,10 @@ SOURCES += \
 HEADERS += \
     common.h \
     lab2.h \
+    lab3.h \
+    lab3diophantus.h \
+    lab3fermat.h \
+    lab3perceptron.h \
     qcustomplot/qcustomplot.h \
     lab1.h \
     mainwindow.h
@@ -26,6 +31,7 @@ HEADERS += \
 FORMS += \
     lab1.ui \
     lab2.ui \
+    lab3.ui \
     mainwindow.ui
 
 # Default rules for deployment.
