@@ -14,6 +14,30 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="0">
+    <widget class="QGroupBox" name="signal">
+     <property name="title">
+      <string>Сигнал</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_7"/>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QGroupBox" name="dft">
+     <property name="title">
+      <string>DFT</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_9"/>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QGroupBox" name="fft">
+     <property name="title">
+      <string>FFT</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_6"/>
+    </widget>
+   </item>
    <item row="0" column="0">
     <widget class="QGroupBox" name="parameters">
      <property name="title">
@@ -93,28 +117,12 @@
      </layout>
     </widget>
    </item>
-   <item row="1" column="0">
-    <widget class="QGroupBox" name="signal">
+   <item row="4" column="0">
+    <widget class="QGroupBox" name="compare">
      <property name="title">
-      <string>Сигнал</string>
+      <string>DFT/FFT</string>
      </property>
-     <layout class="QGridLayout" name="gridLayout_7"/>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QGroupBox" name="dft">
-     <property name="title">
-      <string>DFT</string>
-     </property>
-     <layout class="QGridLayout" name="gridLayout_9"/>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QGroupBox" name="fft">
-     <property name="title">
-      <string>FFT</string>
-     </property>
-     <layout class="QGridLayout" name="gridLayout_6"/>
+     <layout class="QGridLayout" name="gridLayout_2"/>
     </widget>
    </item>
   </layout>

@@ -7,6 +7,14 @@
 #include <valarray>
 #define PI 3.1415926
 
+#define measure(fn, arg, unit)\
+  [arg]() {\
+    auto start = std::chrono::high_resolution_clock::now();\
+    fn(arg);\
+    return std::chrono::duration_cast<std::chrono::unit>(\
+    std::chrono::high_resolution_clock::now() - start).count();\
+  }()
+
 QVector<double> dft(const QVector<double> &signal) {
   size_t N = signal.length();
   QVector<std::complex<double>> spectrum(N);
@@ -77,6 +85,33 @@ Lab2::Lab2(QWidget *parent) : QWidget(parent), ui(new Ui::Lab2) {
     fftPlot->yAxis->setRange(0, 400);
     fftPlot->replot();
     ui->fft->layout()->addWidget(fftPlot);
+    auto dftTimePlot = new QCustomPlot(this);
+    auto fftTimePlot = new QCustomPlot(this);
+    QVector<double> nKeys;
+    QVector<double> dftTime;
+    QVector<double> fftTime;
+    for(int n = 5;n <= 12;++n) {
+        nKeys.push_back(1 << n);
+        auto signal = generate(ui->harmonics->value(), ui->frequency->value(),1 << n);
+        dftTime.push_back(measure(dft, signal, microseconds));
+        fftTime.push_back(measure(fft, signal, microseconds));
+    }
+    dftTimePlot->addGraph();
+    dftTimePlot->graph(0)->addData(nKeys, dftTime);
+    dftTimePlot->xAxis->setRange(1 << 5, 1 << 12);
+    dftTimePlot->xAxis->setLabel("DFT(N)");
+    dftTimePlot->yAxis->setRange(0, 2e6);
+    dftTimePlot->yAxis->setLabel("t(μs)");
+    dftTimePlot->replot();
+    fftTimePlot->addGraph();
+    fftTimePlot->graph(0)->addData(nKeys, fftTime);
+    fftTimePlot->xAxis->setRange(1 << 5, 1 << 12);
+    fftTimePlot->xAxis->setLabel("FFT(N)");
+    fftTimePlot->yAxis->setRange(0, 3000);
+    fftTimePlot->yAxis->setLabel("t(μs)");
+    fftTimePlot->replot();
+    ui->compare->layout()->addWidget(dftTimePlot);
+    ui->compare->layout()->addWidget(fftTimePlot);
   });
 }
 
