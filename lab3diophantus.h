@@ -35,8 +35,8 @@ class Diophantus {
   std::vector<Chromosome> population;
 
 public:
-  Diophantus(std::vector<int> task, int target) {
-    for (size_t i = 0; i < pow(task.size(), 4); ++i) {
+  Diophantus(std::vector<int> task, int target, int sizePower = 4) {
+    for (size_t i = 0; i < pow(task.size(), sizePower); ++i) {
       std::vector<int> genes(task.size());
       for (size_t n = 0; n < task.size(); ++n)
         genes[n] = std::uniform_int_distribution<int>(1, target / 2)(rd);
